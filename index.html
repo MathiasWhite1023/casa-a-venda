@@ -4,33 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa à Venda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #eaeaea;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
             min-height: 100vh;
             color: #333;
         }
         .container {
-            background-color: #fff;
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 90%;
-            margin: 20px 0;
+            margin: 20px auto;
+            text-align: center;
+            flex-grow: 1;
+        }
+        header {
+            background-color: #4a4a4a;
+            padding: 20px;
+            color: white;
             text-align: center;
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3em;
+            margin: 0;
         }
         .photos img {
             max-width: 100%;
@@ -43,7 +49,7 @@
             margin-bottom: 20px;
         }
         .info h2 {
-            color: #2980b9;
+            color: #4a90e2;
             font-size: 1.5em;
             margin: 10px 0;
         }
@@ -62,32 +68,43 @@
         }
         a {
             text-decoration: none;
-            color: #2980b9;
+            color: #4a90e2;
+        }
+        footer {
+            background-color: #4a4a4a;
+            padding: 10px;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Casa dos Seus Sonhos</h1>
+    </header>
     <div class="container">
-        <h1>Casa à Venda</h1>
         <div class="photos">
             <img src="foto1.jpg" alt="Foto da Casa 1">
             <img src="foto2.jpg" alt="Foto da Casa 2">
         </div>
         <div class="info">
             <h2>Descrição</h2>
-            <p>casa com 3 quartos, 2 banheiros, cozinha moderna, sala de estar espaçosa e quintal grande.</p>
+            <p>Bela casa com 3 quartos, 2 banheiros, cozinha moderna, sala de estar espaçosa e quintal grande.</p>
             <h2>Preço</h2>
             <p>R$ 450.000,00</p>
             <h2>Contato</h2>
             <p>Telefone: (11) 1234-5678</p>
             <p>Email: contato@imobiliaria.com.br</p>
         </div>
-        <p>Clique na imagem abaixo para acessar o link com as demais imagens da casa:</p>
+        <p>Clique na imagem abaixo para acessar o link:</p>
         <div class="link-img">
             <a href="https://seulink.com" target="_blank">
                 <img src="imagem-link.png" alt="Imagem do Link">
             </a>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2024 Casa dos Seus Sonhos. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
