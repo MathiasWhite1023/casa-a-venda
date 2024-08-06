@@ -57,18 +57,28 @@
             line-height: 1.6;
             margin: 10px 0;
         }
-        .link-img img {
+        .footer {
+            background-color: #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer img {
             width: 100px;
             height: auto;
             transition: transform 0.3s;
         }
-        .link-img img:hover {
+        .footer img:hover {
             transform: scale(1.1);
         }
         a {
             text-decoration: none;
             color: #2980b9;
         }
+
     </style>
 </head>
 <body>
@@ -89,10 +99,12 @@
             <p>Telefone: (11) 1234-5678</p>
             <p>Email: contato@imobiliaria.com.br</p>
         </div>
-        <p>Clique na imagem abaixo para acessar mais fotos da casa:</p>
-        <div class="link-img">
+        <div class="footer">
             <a href="https://drive.google.com/drive/folders/1KgNwi9LktyW4U3QUgjLJUZeSIWwG4RZ3?usp=sharing" target="_blank">
-                <img src="imagem-link.png" alt="Imagem do Link">
+                <img src="imagem-link-drive.png" alt="Link para o Drive">
+            </a>
+            <a href="https://outro-link.com" target="_blank">
+                <img src="imagem-link-outro.png" alt="Outro Link">
             </a>
         </div>
     </div>
