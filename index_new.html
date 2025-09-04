@@ -64,6 +64,14 @@
             color: var(--primary-color);
         }
 
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 80px;
@@ -92,10 +100,6 @@
             font-size: 1.1rem;
             opacity: 0.9;
             margin-bottom: 40px;
-        }
-
-        .hero-address a:hover {
-            opacity: 0.8;
         }
 
         .hero-specs {
@@ -208,7 +212,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
@@ -219,17 +223,16 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
-            aspect-ratio: 4/3;
         }
 
         .photo-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
 
         .photo-card img {
             width: 100%;
-            height: 100%;
+            height: 280px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -238,28 +241,20 @@
             transform: scale(1.05);
         }
 
-        .photo-card::after {
-            content: '\f065';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+        .photo-overlay {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.7);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
 
-        .photo-card:hover::after {
-            opacity: 1;
+        .photo-card:hover .photo-overlay {
+            transform: translateY(0);
         }
 
         /* Features Section */
@@ -343,6 +338,26 @@
             text-align: center;
         }
 
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
         /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
@@ -421,11 +436,6 @@
                 gap: 20px;
             }
             
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
             .price {
                 font-size: 2.2rem;
             }
@@ -442,10 +452,8 @@
                 right: 20px;
             }
             
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+            .contact-info {
+                display: none;
             }
         }
 
@@ -469,8 +477,9 @@
             <div class="logo">
                 <i class="fas fa-home"></i> Casa de Luxo
             </div>
-            <div style="font-size: 0.9rem; color: var(--medium-gray);">
-                À venda • Alameda das Paineiras, 777
+            <div class="contact-info">
+                <div><i class="fas fa-phone"></i> (11) 98272-0837</div>
+                <div><i class="fas fa-envelope"></i> contato@imobiliaria.com.br</div>
             </div>
         </div>
     </div>
@@ -479,11 +488,7 @@
     <div class="hero">
         <h1>Casa de Alto Padrão</h1>
         <p class="hero-subtitle">Arquitetura moderna com tecnologia inteligente</p>
-        <p class="hero-address">
-            <a href="https://maps.google.com/?q=Alameda+das+Paineiras+777" target="_blank" style="color: white; text-decoration: none; transition: opacity 0.3s ease;">
-                <i class="fas fa-map-marker-alt"></i> Alameda das Paineiras, 777
-            </a>
-        </p>
+        <p class="hero-address"><i class="fas fa-map-marker-alt"></i> Alameda das Paineiras, 777</p>
         
         <div class="hero-specs">
             <div class="spec-item">
@@ -521,16 +526,32 @@
             <div class="gallery">
                 <div class="gallery-grid">
                     <div class="photo-card" onclick="openLightbox('foto1.jpg')">
-                        <img src="foto1.jpg" alt="Casa - Foto 1">
+                        <img src="foto1.jpg" alt="Fachada Principal">
+                        <div class="photo-overlay">
+                            <h4>Fachada com Esquadrias Motorizadas</h4>
+                            <p>Esquadrias pretas padrão Gold com controle remoto</p>
+                        </div>
                     </div>
                     <div class="photo-card" onclick="openLightbox('foto2.jpg')">
-                        <img src="foto2.jpg" alt="Casa - Foto 2">
+                        <img src="foto2.jpg" alt="Área Interna">
+                        <div class="photo-overlay">
+                            <h4>Ambientes Integrados</h4>
+                            <p>Sala, jantar e cozinha com pé direito duplo</p>
+                        </div>
                     </div>
                     <div class="photo-card" onclick="openLightbox('foto3.jpg')">
-                        <img src="foto3.jpg" alt="Casa - Foto 3">
+                        <img src="foto3.jpg" alt="Cozinha Gourmet">
+                        <div class="photo-overlay">
+                            <h4>Cozinha Premium</h4>
+                            <p>Integrada com despensa e área gourmet</p>
+                        </div>
                     </div>
                     <div class="photo-card" onclick="openLightbox('foto4.jpg')">
-                        <img src="foto4.jpg" alt="Casa - Foto 4">
+                        <img src="foto4.jpg" alt="Área Externa">
+                        <div class="photo-overlay">
+                            <h4>Piscina com Prainha</h4>
+                            <p>Aquecimento solar e área de lazer completa</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -614,22 +635,31 @@
             </div>
         </div>
 
-        <!-- Call to Action Section -->
+        <!-- Contact Section -->
         <div class="contact-section">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Interessado?</h2>
-            <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px;">Agende sua visita e conheça esta propriedade exclusiva</p>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Entre em Contato</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Agende sua visita e conheça esta propriedade exclusiva</p>
             
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px); max-width: 600px; margin: 0 auto;">
-                <div style="font-size: 3rem; margin-bottom: 20px;">
-                    <i class="fab fa-whatsapp" style="color: #25d366;"></i>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <h4>Telefone</h4>
+                    <p>(11) 98272-0837</p>
                 </div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Clique no botão flutuante do WhatsApp</h3>
-                <p style="font-size: 1.1rem; opacity: 0.8; line-height: 1.6;">
-                    Entre em contato conosco pelo WhatsApp e tire todas as suas dúvidas. 
-                    Estamos prontos para agendar uma visita e apresentar todos os detalhes desta casa única.
-                </p>
-                <div style="margin-top: 25px; font-size: 1rem; opacity: 0.7;">
-                    <i class="fas fa-phone"></i> (11) 98272-0837
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h4>WhatsApp</h4>
+                    <p>Clique no botão flutuante</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <p>contato@imobiliaria.com.br</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Endereço</h4>
+                    <p>Alameda das Paineiras, 777</p>
                 </div>
             </div>
         </div>
