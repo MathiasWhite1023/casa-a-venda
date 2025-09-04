@@ -107,21 +107,27 @@
         }
 
         .spec-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             padding: 20px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .spec-number {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 5px;
         }
 
         .spec-label {
             font-size: 0.9rem;
-            opacity: 0.9;
+            opacity: 1;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-weight: 500;
         }
 
         /* Main Container */
@@ -609,34 +615,6 @@
                     <div class="spec-card">
                         <h4>Acabamentos Especiais</h4>
                         <p>Banheira de imersão na suíte master e pé direito duplo nos ambientes sociais</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="content-section fade-in">
-            <div class="section-header">
-                <h2 class="section-title">Compartilhe este Anúncio</h2>
-                <p class="section-subtitle">Escaneie o QR Code para acessar no celular</p>
-            </div>
-            <div style="text-align: center; padding: 40px;">
-                <div style="background: white; padding: 30px; border-radius: 20px; display: inline-block; box-shadow: var(--shadow);">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://mathiaswhite1023.github.io/casa-a-venda/" 
-                         alt="QR Code do Site" 
-                         style="width: 200px; height: 200px; border-radius: 10px;">
-                    <div style="margin-top: 20px; color: var(--medium-gray); font-size: 0.9rem;">
-                        <i class="fas fa-qrcode"></i> Escaneie para acessar
-                    </div>
-                </div>
-                <div style="margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    <div style="background: var(--light-gray); padding: 20px; border-radius: 15px; border-left: 4px solid var(--accent-color);">
-                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">
-                            <i class="fas fa-share-alt"></i> Fácil de Compartilhar
-                        </h4>
-                        <p style="color: var(--medium-gray); font-size: 0.95rem; margin: 0;">
-                            Aponte a câmera do celular para o QR Code e compartilhe este anúncio com amigos e familiares interessados.
-                        </p>
                     </div>
                 </div>
             </div>
