@@ -18,7 +18,7 @@
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #34495e;
-            --accent-color: #e67e22;
+            --accent-color: #5a6c7d;
             --light-gray: #f8f9fa;
             --medium-gray: #6c757d;
             --dark-gray: #343a40;
@@ -134,7 +134,7 @@
 
         /* Price Banner */
         .price-section {
-            background: linear-gradient(135deg, var(--accent-color), #d35400);
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
             color: white;
             text-align: center;
             padding: 30px;
@@ -582,33 +582,61 @@
         <div class="content-section fade-in">
             <div class="section-header">
                 <h2 class="section-title">Especificações Técnicas</h2>
-                <p class="section-subtitle">Detalhes completos da propriedade</p>
+                <p class="section-subtitle">Detalhes técnicos e acabamentos</p>
             </div>
             <div class="specifications">
                 <div class="spec-grid">
                     <div class="spec-card">
-                        <h4>Estrutura</h4>
-                        <p>Casa com pé direito duplo, 356m² de área construída em terreno de 452,34m²</p>
+                        <h4>Esquadrias Premium</h4>
+                        <p>Padrão Gold preto reforçado, 2,50m altura, motorizadas com controle remoto e mosqueteiro</p>
                     </div>
                     <div class="spec-card">
-                        <h4>Quartos</h4>
-                        <p>4 suítes: 3 no piso superior com sacadas + 1 térrea com acessibilidade</p>
+                        <h4>Sistema Hidráulico</h4>
+                        <p>Aquecimento central de água (Boiler) e aquecimento solar para piscina</p>
                     </div>
                     <div class="spec-card">
-                        <h4>Áreas Sociais</h4>
-                        <p>Sala de TV, sala de jantar e cozinha integradas + espaço gourmet</p>
+                        <h4>Energia Sustentável</h4>
+                        <p>Sistema fotovoltaico e ponto de alimentação para carro elétrico na garagem</p>
                     </div>
                     <div class="spec-card">
-                        <h4>Serviços</h4>
-                        <p>Lavabo, despensa, lavanderia completa</p>
+                        <h4>Automação</h4>
+                        <p>Iluminação inteligente conectada com Alexa e controle via celular</p>
                     </div>
                     <div class="spec-card">
                         <h4>Climatização</h4>
-                        <p>Ar condicionado nos 4 quartos + closets + sala de TV</p>
+                        <p>Pontos de ar condicionado em todos os quartos, closets e sala de TV</p>
                     </div>
                     <div class="spec-card">
-                        <h4>Área Externa</h4>
-                        <p>Piscina 22,4m² com prainha e aquecimento solar</p>
+                        <h4>Acabamentos Especiais</h4>
+                        <p>Banheira de imersão na suíte master e pé direito duplo nos ambientes sociais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="content-section fade-in">
+            <div class="section-header">
+                <h2 class="section-title">Compartilhe este Anúncio</h2>
+                <p class="section-subtitle">Escaneie o QR Code para acessar no celular</p>
+            </div>
+            <div style="text-align: center; padding: 40px;">
+                <div style="background: white; padding: 30px; border-radius: 20px; display: inline-block; box-shadow: var(--shadow);">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://mathiaswhite1023.github.io/casa-a-venda/" 
+                         alt="QR Code do Site" 
+                         style="width: 200px; height: 200px; border-radius: 10px;">
+                    <div style="margin-top: 20px; color: var(--medium-gray); font-size: 0.9rem;">
+                        <i class="fas fa-qrcode"></i> Escaneie para acessar
+                    </div>
+                </div>
+                <div style="margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <div style="background: var(--light-gray); padding: 20px; border-radius: 15px; border-left: 4px solid var(--accent-color);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                            <i class="fas fa-share-alt"></i> Fácil de Compartilhar
+                        </h4>
+                        <p style="color: var(--medium-gray); font-size: 0.95rem; margin: 0;">
+                            Aponte a câmera do celular para o QR Code e compartilhe este anúncio com amigos e familiares interessados.
+                        </p>
                     </div>
                 </div>
             </div>
