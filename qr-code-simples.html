@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estou à Venda - Casa de Luxo</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            max-width: 600px;
+            width: 100%;
+            border: 3px solid #e8ecf0;
+        }
+        
+        .main-title {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -2px;
+        }
+        
+        .qr-section {
+            margin: 40px 0 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code img {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            margin-top: 30px;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .phone-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 15px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .owner-info {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .decorative-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .decorative-element.top-left {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .decorative-element.bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                min-height: auto;
+            }
+            
+            .decorative-element {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: 2px solid #ddd;
+            }
+            
+            .qr-section,
+            .contact-section {
+                box-shadow: none;
+            }
+        }
+        
+        /* Animações suaves */
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .qr-code {
+            transition: transform 0.3s ease;
+        }
+        
+        .qr-code:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="decorative-element top-left"></div>
+    <div class="decorative-element bottom-right"></div>
+    
+    <div class="container">
+        <h1 class="main-title">Estou à Venda</h1>
+        
+        <div class="qr-section">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mathiaswhite1023.github.io/casa-a-venda/" alt="QR Code - Casa à Venda">
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <div class="whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h2 class="contact-title">Entre em Contato</h2>
+            <p class="contact-subtitle">Escaneie o QR Code ou ligue diretamente</p>
+            <div class="phone-number">(11) 98272-0837</div>
+            <div class="owner-info">
+                <strong>Proprietário: Vitor</strong><br>
+                Alameda das Paineiras, 777
+            </div>
+        </div>
+    </div>
+</body>
+</html>
